@@ -1,0 +1,1766 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../praticas/desafio_final/">
+      
+      
+        <link rel="next" href="../autor/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Referencias - Engenharia de Prompt para servidores públicos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-engenharia-de-prompt-para-servidores-publicos" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Engenharia de Prompt para servidores públicos" class="md-header__button md-logo" aria-label="Engenharia de Prompt para servidores públicos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engenharia de Prompt para servidores públicos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Referencias
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Engenharia de Prompt para servidores públicos" class="md-nav__button md-logo" aria-label="Engenharia de Prompt para servidores públicos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Engenharia de Prompt para servidores públicos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Engenharia de Prompt para Servidores Públicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aulas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aulas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aulas/fluxos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fluxos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aulas/lgpd2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LGPD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modelos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Básicos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Básicos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/0_zero_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/1_few_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Few Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/2_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/3_formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/4_priming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Priming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Avançados
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Avançados
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/6_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/7_role/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/8_cot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chain of Thought
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/9_reflexive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflexive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/10_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos/11_ReAct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReAct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercicios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Exercicios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Básicos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Básicos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/0_zero_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/1_few_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Few Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/2_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/3_formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/4_priming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Priming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Avançados
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Avançados
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/6_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/7_role/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/8_cot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chain of Thought
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/9_reflexive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflexive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/10_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/11_ReAct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReAct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Praticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Praticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../praticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trilha de Práticas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../praticas/pratica1_engenharia_de_prompt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prática 1 — Engenharia de Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../praticas/pratica2_contexto_e_agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prática 2 — Contexto e Agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../praticas/desafio_final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafio Final (opcional)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="curso-de-engenharia-de-prompt-para-servidores-publicos">🧠 Curso de Engenharia de Prompt para Servidores Públicos</h1>
+<blockquote>
+<p><strong>Autor:</strong> Adriano Marabuco</p>
+</blockquote>
+<h1 id="recursos-e-referencias">Recursos e Referências</h1>
+<h2 id="aula-0-inteligencia-artificial">📚 Aula 0 - Inteligência Artificial</h2>
+<ul>
+<li><strong>Foundation Models:</strong> BOMMASANI, Rishi et al. <em>On the opportunities and risks of foundation models</em>. arXiv preprint, 2021.<ul>
+<li>🔗 <a href="https://arxiv.org/abs/2108.07258">Ler no arXiv</a></li>
+</ul>
+</li>
+<li><strong>Stochastic Parrots:</strong> BENDER, Emily M. et al. <em>On the dangers of stochastic parrots: Can language models be too big?</em>. ACM FAccT, 2021.<ul>
+<li>🔗 <a href="https://dl.acm.org/doi/10.1145/3442188.3445922">Ler na ACM Digital Library</a></li>
+</ul>
+</li>
+<li><strong>Transfer Learning:</strong> PAN, Sinno Jialin; YANG, Qiang. <em>A survey on transfer learning</em>. IEEE Transactions on knowledge and data engineering, 2009.<ul>
+<li>🔗 <a href="https://ieeexplore.ieee.org/document/5288526">Ler no IEEE Xplore</a></li>
+</ul>
+</li>
+<li><strong>Diffusion Models:</strong> SOHL-DICKSTEIN, Jascha et al. <em>Deep unsupervised learning using nonequilibrium thermodynamics</em>. ICML, 2015.<ul>
+<li>🔗 <a href="https://arxiv.org/abs/1503.03585">Ler no arXiv</a></li>
+</ul>
+</li>
+<li><strong>Riscos e Alucinações:</strong> LI, Zihao. <em>The dark side of chatgpt: Legal and ethical challenges from stochastic parrots and hallucination</em>. arXiv preprint, 2023.<ul>
+<li>🔗 <a href="https://arxiv.org/abs/2304.14347">Ler no arXiv</a></li>
+</ul>
+</li>
+<li><strong>Janela de Contexto:</strong> LIU, Nelson F. et al. <em>Lost in the middle: How language models use long contexts</em>. arXiv preprint, 2023.<ul>
+<li>🔗 <a href="https://arxiv.org/abs/2307.03172">Ler no arXiv</a></li>
+</ul>
+</li>
+<li><strong>Impacto Cognitivo:</strong> KOSMYNA, Nataliya et al. <em>Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task</em>. arXiv preprint, 2025.<ul>
+<li>🔗 <a href="https://arxiv.org/abs/2506.08872">Verificar no arXiv</a> <em>(Nota: Citado nos slides como material de 2025)</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="aula-1-lgpd">Aula 1 LGPD</h2>
+<h2 id="legislacao-e-guias-tecnicos">📜 Legislação e Guias Técnicos</h2>
+<p>Documentos oficiais e guias orientadores sobre a aplicação da lei e o uso de IA.</p>
+<ul>
+<li><strong>Lei Geral de Proteção de Dados (LGPD):</strong> Lei nº 13.709/2018.<ul>
+<li><em>Artigos citados:</em> Art. 1º (Fundamentos), Art. 3º (Aplicação), Art. 5º (Definições), Art. 6º (Princípios), Art. 42-43 (Responsabilidade), Art. 52 (Sanções).</li>
+</ul>
+</li>
+<li><strong>IA Generativa e a LGPD (ANPD):</strong> Documento técnico sobre o tratamento de dados pessoais em sistemas de IA.<ul>
+<li>🔗 <a href="https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf/view">Ler Radar Tecnológico ANPD (PDF)</a></li>
+</ul>
+</li>
+<li><strong>Cartilha de Segurança (CERT.br):</strong> Fascículo sobre Vazamento de Dados.<ul>
+<li>🔗 <a href="https://cartilha.cert.br/fasciculos/vazamento-de-dados/fasciculo-vazamento-de-dados.pdf">Ler Fascículo (PDF)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="aula-2-engenharia-de-prompts">Aula 2 Engenharia de Prompts</h2>
+<h2 id="referencias-bibliograficas-papers">📚 Referências Bibliográficas (Papers)</h2>
+<p>Artigos acadêmicos fundamentais que embasam as técnicas de <em>Prompt Engineering</em> discutidas em aula.</p>
+<ul>
+<li><strong>Zero-Shot Learning:</strong><ul>
+<li>KOJIMA, Takeshi et al. <em>Large language models are zero-shot reasoners</em>. [cite_start]NeurIPS, 2022. [cite: 639]</li>
+<li>LAROCHELLE, Hugo et al. <em>Zero-data learning of new tasks</em>. [cite_start]AAAI, 2008. [cite: 641]</li>
+</ul>
+</li>
+<li><strong>Few-Shot Learning:</strong><ul>
+<li>BROWN, Tom et al. <em>Language models are few-shot learners</em>. [cite_start]NeurIPS, 2020. [cite: 662]</li>
+</ul>
+</li>
+<li><strong>Instruction Following:</strong><ul>
+<li>OUYANG, Long et al. <em>Training language models to follow instructions with human feedback</em>. [cite_start]NeurIPS, 2022. [cite: 683]</li>
+</ul>
+</li>
+<li><strong>Meta Prompting:</strong><ul>
+<li>REYNOLDS, Laria; MCDONELL, Kyle. <em>Prompt programming for large language models: Beyond the few-shot paradigm</em>. [cite_start]CHI, 2021. [cite: 703]</li>
+<li>ZHOU, Yongchao et al. <em>Large language models are human-level prompt engineers</em>. [cite_start]ICLR, 2022. [cite: 705]</li>
+</ul>
+</li>
+<li><strong>Chain of Thought (CoT):</strong><ul>
+<li>WEI, Jason et al. <em>Chain-of-thought prompting elicits reasoning in large language models</em>. [cite_start]NeurIPS, 2022. [cite: 714]</li>
+</ul>
+</li>
+<li><strong>Self-Refine (Reflexão):</strong><ul>
+<li>MADAAN, Aman et al. <em>Self-refine: Iterative refinement with self-feedback</em>. [cite_start]NeurIPS, 2023. [cite: 724]</li>
+</ul>
+</li>
+<li><strong>Role-Play:</strong><ul>
+<li>KONG, Aobo et al. [cite_start]<em>Better zero-shot reasoning with role-play prompting</em>. arXiv, 2023. [cite: 734]</li>
+</ul>
+</li>
+<li><strong>RAG (Retrieval-Augmented Generation):</strong><ul>
+<li>LEWIS, Patrick et al. <em>Retrieval-augmented generation for knowledge-intensive nlp tasks</em>. [cite_start]NeurIPS, 2020. [cite: 742]</li>
+</ul>
+</li>
+<li><strong>ReAct (Reason + Act):</strong><ul>
+<li>YAO, Shunyu et al. <em>React: Synergizing reasoning and acting in language models</em>. [cite_start]ICLR, 2022. [cite: 751]</li>
+</ul>
+</li>
+<li><strong>Engenharia de IA:</strong><ul>
+<li>HUYEN, Chip. <em>AI Engineering: Building Applications with Foundation Models</em>. [cite_start]O'Reilly Media. [cite: 531]</li>
+</ul>
+</li>
+</ul>
+<h2 id="guias-oficiais-e-documentacao">📘 Guias Oficiais e Documentação</h2>
+<p>Materiais técnicos das principais desenvolvedoras de LLMs.</p>
+<h3 id="google-gemini">Google (Gemini)</h3>
+<ul>
+<li><strong>Estratégias de Prompting:</strong> Documentação oficial da API do Gemini.<ul>
+<li>[cite_start]🔗 <a href="https://ai.google.dev/gemini-api/docs/prompting-strategies?hl=pt-br">Ler Documentação</a> [cite: 532]</li>
+</ul>
+</li>
+<li><strong>Prompting Guide 101:</strong> Guia para Google Workspace.<ul>
+<li>[cite_start]🔗 <a href="https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf">Baixar PDF</a> [cite: 545]</li>
+</ul>
+</li>
+</ul>
+<h3 id="anthropic-claude">Anthropic (Claude)</h3>
+<ul>
+<li><strong>Modelos e Variáveis:</strong> Guia sobre templates de prompts.<ul>
+<li>[cite_start]🔗 <a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables">Ler Guia</a> [cite: 555]</li>
+</ul>
+</li>
+<li><strong>Chain of Thought:</strong> Exemplos práticos.<ul>
+<li>[cite_start]🔗 <a href="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought#example-writing-donor-emails-guided-cot">Ver Exemplos</a> [cite: 717]</li>
+</ul>
+</li>
+</ul>
+<h3 id="openai">OpenAI</h3>
+<ul>
+<li><strong>Prompt Engineering Guide:</strong> Guia oficial de boas práticas.<ul>
+<li>[cite_start]🔗 <a href="https://platform.openai.com/docs/guides/prompt-engineering">Ler Guia</a> [cite: 569]</li>
+</ul>
+</li>
+</ul>
+<h3 id="outros">Outros</h3>
+<ul>
+<li><strong>Markdown Guide (GitHub):</strong> Sintaxe para formatação de textos.<ul>
+<li>[cite_start]🔗 <a href="https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Acessar Guia</a> [cite: 584]</li>
+</ul>
+</li>
+</ul>
+<h2 id="repositorios-de-prompts">🗃️ Repositórios de Prompts</h2>
+<p>Bibliotecas de prompts prontos para uso e inspiração.</p>
+<ul>
+<li>[cite_start]<strong>Google Gallery:</strong> <a href="https://ai.google.dev/gemini-api/prompts?hl=pt-br">ai.google.dev/gemini-api/prompts</a> [cite: 622]</li>
+<li>[cite_start]<strong>Anthropic Prompt Library:</strong> <a href="https://docs.claude.com/en/resources/prompt-library/library">docs.claude.com/en/resources/prompt-library</a> [cite: 624]</li>
+<li>[cite_start]<strong>OpenAI Prompt Pack:</strong> <a href="https://academy.openai.com/public/clubs/work-users-ynjqu/resources/chatgpt-for-any-role">academy.openai.com</a> [cite: 623]</li>
+<li>[cite_start]<strong>Repositório Nacional (TCU/TCE):</strong> <a href="https://cines.tcerr.tc.br/appiagen/">cines.tcerr.tc.br/appiagen</a> [cite: 625]</li>
+</ul>
+<h2 id="leituras-complementares">📰 Leituras Complementares</h2>
+<ul>
+<li><strong>Artigo:</strong> "ChatGPT cria ou destrói trabalho?" por Silvio Meira.<ul>
+<li>[cite_start]🔗 <a href="https://silvio.meira.com/chatgpt-cria-ou-destroi-trabalho/">Ler artigo</a> [cite: 511]</li>
+</ul>
+</li>
+</ul>
+<h3 id="recursos-e-repositorios">Recursos e Repositórios</h3>
+<ul>
+<li><strong>Galeria Google:</strong><ul>
+<li><a href="https://ai.google.dev/gemini-api/prompts?hl=pt-br">https://ai.google.dev/gemini-api/prompts?hl=pt-br</a> [cite: 115]</li>
+</ul>
+</li>
+<li><strong>Prompt Pack OpenAI:</strong><ul>
+<li><a href="https://academy.openai.com/public/clubs/work-users-ynjqu/resources/chatgpt-for-any-role">https://academy.openai.com/public/clubs/work-users-ynjqu/resources/chatgpt-for-any-role</a> [cite: 116]</li>
+</ul>
+</li>
+<li><strong>Prompt Library (Claude):</strong><ul>
+<li><a href="https://docs.claude.com/en/resources/prompt-library/library">https://docs.claude.com/en/resources/prompt-library/library</a> [cite: 117]</li>
+</ul>
+</li>
+<li><strong>Repositório Nacional de Prompts:</strong><ul>
+<li><a href="https://cines.tcerr.tc.br/appiagen/">https://cines.tcerr.tc.br/appiagen/</a> [cite: 118]</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

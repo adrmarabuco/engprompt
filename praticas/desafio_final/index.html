@@ -1,0 +1,2006 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../pratica2_contexto_e_agentes/">
+      
+      
+        <link rel="next" href="../../referencias/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Desafio Final (opcional) - Engenharia de Prompt para servidores públicos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#desafio-final-opcional" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Engenharia de Prompt para servidores públicos" class="md-header__button md-logo" aria-label="Engenharia de Prompt para servidores públicos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engenharia de Prompt para servidores públicos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Desafio Final (opcional)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Engenharia de Prompt para servidores públicos" class="md-nav__button md-logo" aria-label="Engenharia de Prompt para servidores públicos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Engenharia de Prompt para servidores públicos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 Engenharia de Prompt para Servidores Públicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aulas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aulas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/fluxos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fluxos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/lgpd2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LGPD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modelos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Básicos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Básicos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/0_zero_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/1_few_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Few Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/2_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/3_formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/4_priming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Priming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Avançados
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Avançados
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/6_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/7_role/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/8_cot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chain of Thought
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/9_reflexive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflexive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/10_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/11_ReAct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReAct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercicios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Exercicios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Básicos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Básicos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/0_zero_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/1_few_shot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Few Shot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/2_instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/3_formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/4_priming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Priming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts Avançados
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompts Avançados
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/6_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/7_role/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/8_cot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chain of Thought
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/9_reflexive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflexive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/10_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/11_ReAct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReAct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Praticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Praticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trilha de Práticas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pratica1_engenharia_de_prompt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prática 1 — Engenharia de Prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pratica2_contexto_e_agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prática 2 — Contexto e Agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desafio Final (opcional)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="desafio-final-opcional">🧭 Desafio Final (opcional)</h1>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    .mission-card.active {
+        background-color: #DBEAFE;
+        border-color: #2563EB;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        height: 300px;
+        max-height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: 768px) {
+        .chart-container {
+            height: 350px;
+        }
+    }
+
+    .deliverable-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+</style>
+
+<main class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+<header class="text-center mb-10 md:mb-16">
+    <p class="text-xl md:text-2xl text-gray-700">Do prompt ao agente, no seu município</p>
+    <p class="text-lg text-gray-500 mt-1">Atividade para depois do curso · individual · sem competição</p>
+</header>
+
+<section id="proposta" class="mb-12">
+    <h2 class="text-3xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-300">📜 A Proposta</h2>
+    <p class="text-lg text-gray-700 mb-8">
+        Este é um <strong>trabalho opcional</strong> para consolidar o curso. Você escolhe uma missão, aplica ao
+        <strong>seu município</strong> com dados públicos reais e resolve o problema combinando
+        <strong>engenharia de prompt</strong>, <strong>engenharia de contexto</strong> e um
+        <strong>fluxo com agentes</strong>, sempre com o humano no circuito. Não há nota de classificação nem
+        premiação: o objetivo é você sair com um caso aplicado e um retorno detalhado.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-500">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">🧩 Como funciona</h3>
+            <ul class="list-disc list-outside space-y-3 pl-5 text-gray-700">
+                <li><span class="font-semibold">Formato:</span> individual (pode trocar ideias com colegas).</li>
+                <li><span class="font-semibold">Ferramentas:</span> qualquer assistente com instruções persistentes
+                    (Gem no Gemini, Projeto no ChatGPT ou Claude).</li>
+                <li><span class="font-semibold">Prazo:</span> definido pelo professor da turma.</li>
+                <li><span class="font-semibold">Dados:</span> portal de dados abertos do seu município ou, se não
+                    houver, as bases nacionais indicadas em cada missão.</li>
+                <li><span class="font-semibold">Retorno:</span> envie pelo formulário para receber feedback
+                    automático por e-mail (opcional).</li>
+            </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow border-l-4 border-green-500">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">🔧 O que aplicar</h3>
+            <ul class="list-disc list-outside space-y-3 pl-5 text-gray-700">
+                <li><span class="font-semibold">Prompt:</span> CoT para analisar, Role para as perspectivas,
+                    Reflexive para revisar.</li>
+                <li><span class="font-semibold">Contexto:</span> fontes selecionadas e citadas, instruções
+                    persistentes, dados minimizados.</li>
+                <li><span class="font-semibold">Agentes:</span> fluxo em etapas com critério de parada e log de
+                    execução.</li>
+                <li><span class="font-semibold">Humano no circuito:</span> aprovação antes de qualquer decisão ou
+                    comunicação pública.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="roteiro" class="mb-12">
+    <h2 class="text-3xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-300">🗺️ Roteiro sugerido</h2>
+    <ol class="list-decimal list-outside pl-6 space-y-2 text-lg text-gray-700">
+        <li><strong>Escolha a missão</strong> e confirme que há dados públicos do seu município sobre o tema.</li>
+        <li><strong>Levante as fontes:</strong> 3 a 6 bases ou documentos. Anote data de atualização e o que cada um
+            responde.</li>
+        <li><strong>Monte o pacote de contexto:</strong> instruções persistentes + fontes selecionadas + o que ficou
+            de fora e por quê.</li>
+        <li><strong>Desenhe o fluxo:</strong> 3 a 6 etapas (ex.: levantar dados → analisar → propor → revisar →
+            aprovação humana → comunicar).</li>
+        <li><strong>Execute</strong> o fluxo etapa por etapa e registre o log.</li>
+        <li><strong>Revise</strong> com um prompt reflexivo e confira os números nas fontes originais.</li>
+        <li><strong>Entregue</strong> pelo formulário (se quiser feedback).</li>
+    </ol>
+</section>
+
+<section id="entregaveis" class="mb-16">
+    <div class="bg-blue-900 rounded-xl p-8 text-white shadow-lg">
+        <h2 class="text-3xl font-bold mb-2 text-center">📦 Entregáveis</h2>
+        <p class="text-center text-blue-200 mb-8 text-lg">Quatro artefatos curtos — qualidade importa mais que
+            volume.</p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white/10 p-6 rounded-lg border border-white/20 text-center">
+                <span class="deliverable-icon">🧠</span>
+                <h3 class="text-xl font-bold mb-2">1. Pacote de Contexto</h3>
+                <p class="text-sm text-blue-100 leading-relaxed">
+                    Instruções persistentes (até 25 linhas) e lista de fontes com justificativa, incluindo ao menos
+                    uma excluída ou tratada.
+                </p>
+            </div>
+            <div class="bg-white/10 p-6 rounded-lg border border-white/20 text-center">
+                <span class="deliverable-icon">🔁</span>
+                <h3 class="text-xl font-bold mb-2">2. Fluxo e Log</h3>
+                <p class="text-sm text-blue-100 leading-relaxed">
+                    Desenho do fluxo (3 a 6 etapas, com parada e aprovação humana) e log de um ciclo executado.
+                </p>
+            </div>
+            <div class="bg-white/10 p-6 rounded-lg border border-white/20 text-center">
+                <span class="deliverable-icon">📄</span>
+                <h3 class="text-xl font-bold mb-2">3. Nota Técnica</h3>
+                <p class="text-sm text-blue-100 leading-relaxed">
+                    Até 1 página, com diagnóstico baseado nos dados, proposta, riscos e próximos passos — citando as
+                    fontes.
+                </p>
+            </div>
+            <div class="bg-white/10 p-6 rounded-lg border border-white/20 text-center">
+                <span class="deliverable-icon">📣</span>
+                <h3 class="text-xl font-bold mb-2">4. Peça Cidadã</h3>
+                <p class="text-sm text-blue-100 leading-relaxed">
+                    Post, FAQ, roteiro de áudio ou infográfico explicando a proposta à população em linguagem
+                    simples.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="missoes" class="my-12 md:my-16">
+    <h2 class="text-3xl font-semibold text-gray-900 mb-4 text-center">📂 Missões</h2>
+    <p class="text-lg text-gray-700 text-center mb-8 max-w-2xl mx-auto">
+        Escolha uma missão e aplique ao seu município. Clique para ver os detalhes e as fontes de dados sugeridas.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <button data-mission="1"
+            class="mission-card border-2 border-transparent text-left bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <span class="text-2xl block mb-2">🔵</span>
+            <h4 class="text-xl font-semibold text-gray-900 mb-1">Missão 01</h4>
+            <p class="font-medium text-blue-700">Trânsito Mais Seguro</p>
+            <p class="text-sm text-gray-600 mt-2">Intervenções de baixo custo nos pontos mais críticos de acidentes.</p>
+        </button>
+        <button data-mission="2"
+            class="mission-card border-2 border-transparent text-left bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <span class="text-2xl block mb-2">🟢</span>
+            <h4 class="text-xl font-semibold text-gray-900 mb-1">Missão 02</h4>
+            <p class="font-medium text-blue-700">Combate às Arboviroses</p>
+            <p class="text-sm text-gray-600 mt-2">Ação intersetorial Saúde + Limpeza Urbana contra dengue, zika e chikungunya.</p>
+        </button>
+        <button data-mission="3"
+            class="mission-card border-2 border-transparent text-left bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <span class="text-2xl block mb-2">🟠</span>
+            <h4 class="text-xl font-semibold text-gray-900 mb-1">Missão 03</h4>
+            <p class="font-medium text-blue-700">Período Chuvoso Seguro</p>
+            <p class="text-sm text-gray-600 mt-2">Priorizar ações de prevenção com orçamento limitado.</p>
+        </button>
+        <button data-mission="4"
+            class="mission-card border-2 border-transparent text-left bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            <span class="text-2xl block mb-2">🟣</span>
+            <h4 class="text-xl font-semibold text-gray-900 mb-1">Missão 04</h4>
+            <p class="font-medium text-blue-700">Missão Livre</p>
+            <p class="text-sm text-gray-600 mt-2">Um problema real da sua área de atuação, com dados públicos.</p>
+        </button>
+    </div>
+
+    <div id="mission-details"
+        class="bg-white p-6 md:p-8 rounded-lg shadow-xl min-h-[300px] flex items-center justify-center transition-all duration-300">
+        <p id="mission-placeholder" class="text-center text-gray-500 text-xl">
+            Selecione uma missão acima para ver os detalhes.
+        </p>
+    </div>
+</section>
+
+<section id="avaliacao" class="my-12 md:my-16">
+    <h2 class="text-3xl font-semibold text-gray-900 mb-4 text-center">💬 Como será o retorno</h2>
+    <p class="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
+        Se você enviar pelo formulário, o Gemini analisa a entrega com a rubrica abaixo e devolve por e-mail uma
+        avaliação por critério com sugestões de melhoria. É um retorno <strong>formativo</strong>: serve para você
+        evoluir, não para classificar.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-2xl font-semibold text-blue-700 mb-4 text-center">Peso dos critérios</h3>
+            <div class="chart-container">
+                <canvas id="rubricChart"></canvas>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-2xl font-semibold text-blue-700 mb-4">Rubrica (10 pontos)</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left min-w-[400px]">
+                    <thead class="bg-gray-100 border-b border-gray-300">
+                        <tr>
+                            <th class="p-3 font-semibold text-gray-700">Critério</th>
+                            <th class="p-3 font-semibold text-gray-700 text-center">Peso</th>
+                            <th class="p-3 font-semibold text-gray-700">O que é observado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-3 font-medium">Contexto e fontes</td>
+                            <td class="p-3 text-center">2</td>
+                            <td class="p-3 text-sm text-gray-600">Instruções completas; ≥ 3 fontes públicas com
+                                justificativa e data; ≥ 1 excluída ou tratada.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Fluxo e humano no circuito</td>
+                            <td class="p-3 text-center">2</td>
+                            <td class="p-3 text-sm text-gray-600">3 a 6 etapas com parada; aprovação humana antes
+                                de decisão ou comunicação; log coerente.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Nota técnica fundamentada</td>
+                            <td class="p-3 text-center">2</td>
+                            <td class="p-3 text-sm text-gray-600">Diagnóstico com dados citados; proposta, riscos e
+                                próximos passos.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Comunicação cidadã</td>
+                            <td class="p-3 text-center">2</td>
+                            <td class="p-3 text-sm text-gray-600">Linguagem simples, sem jargão, coerente com a nota
+                                técnica.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Ética e LGPD</td>
+                            <td class="p-3 text-center">2</td>
+                            <td class="p-3 text-sm text-gray-600">Apenas dados agregados/públicos; nenhum dado
+                                pessoal; proposta justa.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">
+                ⚠️ Mesmo em bases públicas, use somente dados <strong>agregados</strong> (por bairro, mês, tipo). Não
+                cole registros individuais no assistente.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center mt-12 md:mt-16 pt-8 border-t border-gray-300 pb-8">
+    <p class="text-lg italic text-gray-700 max-w-2xl mx-auto">
+        "A tecnologia não resolve problemas públicos sozinha; ela precisa da inteligência humana para guiá-la."
+    </p>
+    <p class="mt-4 font-bold text-2xl text-blue-800">
+        Bom trabalho!
+    </p>
+</footer>
+
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const missions = {
+            "1": {
+                title: "🔵 Missão 01: Trânsito Mais Seguro",
+                context: "Os acidentes com pedestres, ciclistas e motociclistas aumentaram no seu município. O órgão de trânsito precisa de um plano de intervenções rápidas e de baixo custo (sinalização, travessias, redução de velocidade) para os pontos mais críticos.",
+                dataLinks: [
+                    { name: "Portal Brasileiro de Dados Abertos — busque pelo seu município (acidentes, vias, infrações)", url: "https://dados.gov.br" },
+                    { name: "Óbitos por acidentes de transporte — DATASUS (TabNet/SIM)", url: "https://datasus.saude.gov.br/informacoes-de-saude-tabnet/" },
+                    { name: "Frota de veículos e população — IBGE Cidades", url: "https://cidades.ibge.gov.br" }
+                ],
+                challenge: [
+                    "<strong>Diagnóstico:</strong> identificar onde e com quem os acidentes se concentram (local, horário, tipo de vítima).",
+                    "<strong>Proposta:</strong> 3 a 5 intervenções priorizadas, com custo relativo e justificativa.",
+                    "<strong>Peça cidadã:</strong> post para redes sociais explicando a mudança e o motivo."
+                ],
+                focus: "Contexto: selecionar só as variáveis agregadas necessárias. Fluxo: agente Analista → agente Redator, com aprovação do gestor de trânsito antes da publicação."
+            },
+            "2": {
+                title: "🟢 Missão 02: Combate às Arboviroses",
+                context: "Os casos de dengue, zika e chikungunya estão subindo. A Saúde suspeita de relação com o acúmulo de resíduos em áreas vulneráveis e propõe um mutirão intersetorial com a Limpeza Urbana.",
+                dataLinks: [
+                    { name: "InfoDengue — situação por município", url: "https://info.dengue.mat.br" },
+                    { name: "Notificações de agravos — DATASUS (TabNet/SINAN)", url: "https://datasus.saude.gov.br/informacoes-de-saude-tabnet/" },
+                    { name: "Saneamento e coleta de lixo — IBGE Cidades", url: "https://cidades.ibge.gov.br" },
+                    { name: "Portal Brasileiro de Dados Abertos — busque pelo seu município (coleta, ocorrências)", url: "https://dados.gov.br" }
+                ],
+                challenge: [
+                    "<strong>Correlação:</strong> cruzar evolução dos casos com indicadores de coleta e saneamento por área.",
+                    "<strong>Ação:</strong> plano de um \"Dia D\" intersetorial (locais, equipes, cronograma).",
+                    "<strong>Peça cidadã:</strong> roteiro de áudio de 30 segundos para carro de som ou rádio comunitária."
+                ],
+                focus: "Contexto: dados de saúde só agregados (nunca registros individuais). Fluxo com dois papéis (Saúde e Limpeza Urbana) e handoff estruturado."
+            },
+            "3": {
+                title: "🟠 Missão 03: Período Chuvoso Seguro",
+                context: "A previsão indica chuvas acima da média e o orçamento é limitado. O Prefeito precisa decidir quais ações de prevenção priorizar, dando atenção a áreas com escolas e unidades de saúde.",
+                dataLinks: [
+                    { name: "S2iD — histórico de desastres e decretos", url: "https://s2id.mi.gov.br" },
+                    { name: "Cemaden — monitoramento e áreas de risco", url: "https://www.gov.br/cemaden" },
+                    { name: "Estabelecimentos de saúde — CNES", url: "https://cnes.datasus.gov.br" },
+                    { name: "Portal Brasileiro de Dados Abertos — busque pelo seu município (defesa civil, obras, escolas)", url: "https://dados.gov.br" }
+                ],
+                challenge: [
+                    "<strong>Priorização:</strong> matriz de decisão cruzando histórico de ocorrências e equipamentos públicos críticos.",
+                    "<strong>Justificativa:</strong> nota técnica com critérios transparentes para a ordem de prioridade.",
+                    "<strong>Peça cidadã:</strong> FAQ para o site da Prefeitura (o que fazer, a quem ligar)."
+                ],
+                focus: "Fluxo com agentes de papéis distintos (técnico, jurídico, financeiro) e um ponto de aprovação humana antes da priorização final."
+            },
+            "4": {
+                title: "🟣 Missão 04: Missão Livre",
+                context: "Escolha um problema real da sua área de atuação (educação, assistência social, arrecadação, meio ambiente, atendimento ao cidadão…) para o qual existam dados públicos do seu município.",
+                dataLinks: [
+                    { name: "Portal Brasileiro de Dados Abertos", url: "https://dados.gov.br" },
+                    { name: "IBGE Cidades — indicadores municipais", url: "https://cidades.ibge.gov.br" }
+                ],
+                challenge: [
+                    "<strong>Problema:</strong> descreva o problema e por que ele importa para a população.",
+                    "<strong>Análise e proposta:</strong> diagnóstico baseado em dados e proposta com riscos e próximos passos.",
+                    "<strong>Peça cidadã:</strong> formato à sua escolha, adequado ao público."
+                ],
+                focus: "Mesmos entregáveis e rubrica das demais missões. Prefira um processo que você realmente poderia levar ao seu setor."
+            }
+        };
+
+        const missionButtons = document.querySelectorAll('.mission-card');
+        const detailsContainer = document.getElementById('mission-details');
+
+        missionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const data = missions[button.dataset.mission];
+
+                missionButtons.forEach(btn => btn.classList.remove('active', 'border-blue-500'));
+                button.classList.add('active', 'border-blue-500');
+
+                const dataLinksHtml = `
+                    <h4 class="text-lg font-semibold text-gray-800 mt-4 mb-2">📊 Fontes de dados sugeridas:</h4>
+                    <div class="space-y-2">
+                        ${data.dataLinks.map(item => `
+                            <div class="flex items-center">
+                                <span class="text-blue-500 mr-2">🔗</span>
+                                <a href="${item.url}" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">${item.name}</a>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">Comece pelo portal de dados abertos ou de transparência do seu município; use as bases nacionais quando não houver dado local.</p>
+                `;
+
+                detailsContainer.innerHTML = `
+                    <div class="w-full">
+                        <h3 class="text-3xl font-bold text-blue-800 mb-3">${data.title}</h3>
+                        <p class="text-lg text-gray-700 mb-4">${data.context}</p>
+                        <hr class="my-4">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">🎯 O Desafio:</h4>
+                        <ol class="list-decimal list-outside pl-5 space-y-2 text-gray-700 mb-4">
+                            ${data.challenge.map(item => `<li>${item}</li>`).join('')}
+                        </ol>
+                        ${dataLinksHtml}
+                        <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                            <h4 class="text-lg font-semibold text-blue-700 mb-1">🔍 Contexto e agentes nesta missão:</h4>
+                            <p class="text-blue-900">${data.focus}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        });
+
+        const ctx = document.getElementById('rubricChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Contexto e fontes (2)',
+                    'Fluxo e humano no circuito (2)',
+                    'Nota técnica fundamentada (2)',
+                    'Comunicação cidadã (2)',
+                    'Ética e LGPD (2)'
+                ],
+                datasets: [{
+                    label: 'Peso',
+                    data: [2, 2, 2, 2, 2],
+                    backgroundColor: ['#1D4ED8', '#2563EB', '#3B82F6', '#60A5FA', '#93C5FD'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { font: { size: 12 }, boxWidth: 20, padding: 15 }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => `${context.label}: ${context.parsed} pontos`
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
