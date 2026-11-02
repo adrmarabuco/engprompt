@@ -1,0 +1,144 @@
+/* Identidade visual das Aulas 0 e 2 (TCE-PE): Montserrat + JetBrains Mono, azul TCE-PE,
+   faixa nas quatro cores do tribunal, cartões com sombra e borda colorida,
+   tabelas com cabeçalho azul e código em azul-marinho. Tema claro único. */
+:root {
+  --tce-red: #C2423E;
+  --tce-amber: #FFB300;
+  --tce-green: #00AB45;
+  --tce-blue: #2F53A3;
+  --tce-navy: #1D3A78;
+  --tce-text: #3E4552;
+  --tce-muted: #5F6368;
+  --tce-line: #DCE3EF;
+  --tce-soft: #EEF2F9;
+  --tce-bg: #FAFBFD;
+  --tce-shadow: 0 2px 10px rgba(29, 58, 120, .10);
+  --tce-stripe: linear-gradient(90deg, #C2423E 0 16%, #FFB300 16% 32%, #00AB45 32% 48%, #2F53A3 48% 100%);
+  --tce-marker: linear-gradient(90deg, #C2423E 0 25%, #FFB300 25% 50%, #00AB45 50% 75%, #2F53A3 75% 100%);
+
+  --md-primary-fg-color: #2F53A3;
+  --md-primary-fg-color--light: #4A6CBC;
+  --md-primary-fg-color--dark: #1D3A78;
+  --md-primary-bg-color: #FFFFFF;
+  --md-primary-bg-color--light: rgba(255, 255, 255, .7);
+  --md-accent-fg-color: #1D3A78;
+  --md-accent-fg-color--transparent: rgba(47, 83, 163, .1);
+  --md-default-bg-color: #FAFBFD;
+  --md-typeset-a-color: #2F53A3;
+  --md-footer-bg-color: #1D3A78;
+  --md-footer-bg-color--dark: #172F63;
+}
+
+/* faixa nas quatro cores no topo e no rodapé */
+.md-header { box-shadow: none; }
+.md-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: var(--tce-stripe);
+  z-index: 1;
+}
+.md-footer::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background: var(--tce-stripe);
+}
+
+/* texto e títulos */
+.md-typeset { color: var(--tce-text); }
+.md-typeset h1,
+.md-typeset h2 { color: var(--tce-navy); font-weight: 700; letter-spacing: 0; }
+.md-typeset h3,
+.md-typeset h4 { color: var(--tce-blue); font-weight: 700; }
+.md-typeset strong { color: var(--tce-navy); }
+.md-typeset h2::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--tce-marker);
+  margin-bottom: .7rem;
+}
+.md-typeset hr { border-bottom-color: var(--tce-line); }
+.md-typeset blockquote {
+  border-left: 6px solid var(--tce-amber);
+  color: var(--tce-navy);
+}
+
+/* tabelas do markdown: cartão com sombra e cabeçalho azul (o Material envolve só as tabelas do markdown) */
+.md-typeset .md-typeset__table table:not([class]) {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: var(--tce-shadow);
+  overflow: hidden;
+  background: #FFFFFF;
+}
+.md-typeset .md-typeset__table table:not([class]) th {
+  background: var(--tce-blue);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+.md-typeset .md-typeset__table table:not([class]) td { border-top-color: var(--tce-line); }
+.md-typeset .md-typeset__table table:not([class]) tbody tr:nth-child(even) td { background: var(--tce-soft); }
+.md-typeset .md-typeset__table table:not([class]) tbody tr:hover { box-shadow: none; }
+
+/* caixas (admonitions e recolhíveis): cartão com borda lateral nas cores do tribunal */
+.md-typeset .admonition[class],
+.md-typeset details[class] {
+  --tce-c: var(--tce-blue);
+  --tce-cs: var(--tce-soft);
+  border: 0;
+  border-left: 6px solid var(--tce-c);
+  border-radius: 10px;
+  box-shadow: var(--tce-shadow);
+  background: #FFFFFF;
+}
+.md-typeset :is(.admonition, details):is(.tip, .hint, .success, .check, .done, .important) { --tce-c: var(--tce-green); --tce-cs: #E6F6EC; }
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention, .question, .help, .faq) { --tce-c: var(--tce-amber); --tce-cs: #FFF4D6; }
+.md-typeset :is(.admonition, details):is(.danger, .error, .failure, .fail, .missing, .bug) { --tce-c: var(--tce-red); --tce-cs: #FBE9E8; }
+.md-typeset :is(.admonition, details):is(.example) { --tce-c: var(--tce-navy); --tce-cs: var(--tce-soft); }
+.md-typeset :is(.admonition, details):is(.quote, .cite) { --tce-c: var(--tce-muted); --tce-cs: #F1F3F6; }
+.md-typeset :is(.admonition, details)[class] > :is(.admonition-title, summary) {
+  background-color: var(--tce-cs);
+  color: var(--tce-navy);
+  font-weight: 700;
+  border-radius: 0 10px 0 0;
+}
+.md-typeset :is(.admonition, details)[class] > :is(.admonition-title, summary)::before { background-color: var(--tce-c); }
+.md-typeset details[class] > summary::after { color: var(--tce-navy); }
+
+/* código: blocos em azul-marinho com destaque âmbar; código em linha em azul-claro */
+.md-typeset code {
+  --md-code-bg-color: var(--tce-soft);
+  --md-code-fg-color: var(--tce-navy);
+}
+.md-typeset pre {
+  --md-code-bg-color: #1D3A78;
+  --md-code-fg-color: #EEF1F7;
+  --md-code-hl-color: rgba(255, 179, 0, .25);
+  --md-code-hl-number-color: #FFD466;
+  --md-code-hl-special-color: #FFD466;
+  --md-code-hl-function-color: #9FC1FF;
+  --md-code-hl-constant-color: #9FC1FF;
+  --md-code-hl-keyword-color: #FFB300;
+  --md-code-hl-string-color: #9FE6B8;
+  --md-code-hl-name-color: #EEF1F7;
+  --md-code-hl-operator-color: #A9BCE0;
+  --md-code-hl-punctuation-color: #A9BCE0;
+  --md-code-hl-comment-color: #A9BCE0;
+  --md-code-hl-generic-color: #FFD466;
+  --md-code-hl-variable-color: #EEF1F7;
+}
+.md-typeset pre > code { border-radius: 12px; }
+
+/* botões */
+.md-typeset .md-button { border-radius: 6px; font-weight: 600; }
+.md-typeset .md-button--primary,
+.md-typeset .md-button:hover { background-color: var(--tce-blue); border-color: var(--tce-blue); color: #FFFFFF; }
+
+/* navegação */
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active { color: var(--tce-blue); font-weight: 700; }
