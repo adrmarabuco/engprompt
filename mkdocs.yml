@@ -2,6 +2,14 @@ site_name: Inteligência Artificial no Serviço Público
 theme:
   name: material
   language: pt
+  font:
+    text: Montserrat
+    code: JetBrains Mono
+  palette:
+    primary: custom
+    accent: custom
+extra_css:
+  - stylesheets/tcepe.css
 markdown_extensions:
   - admonition
   - attr_list
